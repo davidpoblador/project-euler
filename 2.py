@@ -16,6 +16,6 @@ def fibmax(maxnum):
 
         yield a
 
-b = sum(a for a in fibmax(4000000) if not a%2)
+b = sum(a for a in fibmax(4000000) if not a % 2)
 
 print(b)
