@@ -1,4 +1,8 @@
 
+from operator import mul
+from functools import reduce
+
+
 def is_palindrome(i):
     """Is i a palindrome?"""
     return str(i) == str(i)[::-1]
@@ -36,3 +40,8 @@ def gcd(a, b):
 def lcm(a, b):
     """LCM of a and b"""
     return a * b / gcd(a, b)
+
+
+def prod(iter):
+    """Product of iterable (like sum())"""
+    return reduce(mul, iter)
