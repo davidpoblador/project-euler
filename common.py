@@ -61,3 +61,17 @@ def divisors(n):
 
 def num_divisors(n):
     return len(divisors(n))
+
+
+def primes(n):
+    """ Find primes below n """
+    sieve = [True] * n
+    for i in range(3, int(n**0.5) + 1, 2):
+        if sieve[i]:
+            sieve[i**2::2*i] = [False] * ((n-(i**2)-1)//(2*i)+1)
+
+    yield 2
+
+    for i in range(3, n, 2):
+        if sieve[i]:
+            yield i
