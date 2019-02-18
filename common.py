@@ -45,3 +45,19 @@ def lcm(a, b):
 def prod(iter):
     """Product of iterable (like sum())"""
     return reduce(mul, iter)
+
+
+def divisors(n):
+    """Finds all divisors for n"""
+    factors = set()
+
+    for i in range(1, int((n ** (1/2)) + 1)):
+        if not n % i:
+            factors.add(i)
+            factors.add(n//i)
+
+    return factors
+
+
+def num_divisors(n):
+    return len(divisors(n))
