@@ -1,6 +1,7 @@
 
 from operator import mul
 from functools import reduce
+from functools import lru_cache
 
 
 def is_palindrome(i):
@@ -59,6 +60,10 @@ def divisors(n):
     return factors
 
 
+def proper_divisors(n):
+    return divisors(n) - {n}
+
+
 def num_divisors(n):
     return len(divisors(n))
 
@@ -85,3 +90,14 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
+
+
+@lru_cache(maxsize=None)
+def fib(n):
+    if n == 1:
+        return 1
+
+    if n == 2:
+        return 2
+
+    return fib(n-1) + fib(n-2)
