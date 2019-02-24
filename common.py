@@ -111,3 +111,20 @@ def is_prime(x):
             if x % n == 0:
                 return False
         return True
+
+
+def to_digits(num):
+    """Convert an integer into a list of its digits (int)"""
+
+    if num < 1:
+        raise ValueError
+
+    digits = []
+    while num >= 10:
+        d = num % 10
+        num //= 10
+        digits.append(d)
+    else:
+        digits.append(num)
+
+    return list(reversed(digits))
