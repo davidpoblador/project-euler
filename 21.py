@@ -25,7 +25,3 @@ for a in range(1, MAX):
             amicable.add(a)
 
 print(sum(amicable))
-
-
-
-
