@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from common import to_digits
+from fractions import Fraction
 
 
 def remove_digit(d, l):
@@ -42,4 +43,4 @@ for d in range(11, 100):
             dprod *= d2
 
 
-print(nprod, dprod)
+print(Fraction(nprod, dprod).denominator)
